@@ -44,6 +44,19 @@
 .filters-section {
   grid-area: filters;
   background-color: #ececec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.filters-section > span {
+  padding-top: 10px;
+}
+.filters-section > select {
+  width: 250px;
+  height: 55px;
+  padding-left: 5px;
+  padding-top: 5px;
+  border-radius: 5px;
 }
 .main-section {
   grid-area: main;
