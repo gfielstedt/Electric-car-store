@@ -27,6 +27,19 @@
 .nav-section {
   grid-area: nav;
   background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10 px;
+  color: #ececec;
+}
+.nav-section .logo-container {
+  display: flex;
+  gap: 5px;
+}
+.nav-section > .logo-container > .logo,
+.menu {
+  width: 30px;
 }
 .filters-section {
   grid-area: filters;
