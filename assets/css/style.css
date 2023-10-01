@@ -64,4 +64,16 @@
 .foot-section {
   grid-area: footer;
   background-color: blue;
+  color: #ececec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.foot-section > .foot {
+  display: flex;
+  justify-content: center;
+}
+.foot-section > .foot > img {
+  width: 25px;
+  padding-top: 10px;
 }
