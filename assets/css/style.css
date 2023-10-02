@@ -9,17 +9,6 @@
     "filters"
     "main"
     "footer";
-  width: 100%;
-  height: 100wh;
-}
-
-.container {
-  display: grid;
-  grid-template-areas:
-    "nav"
-    "filters"
-    "main"
-    "footer";
   grid-template-rows: 60px 60px 1fr 60px;
   width: 100%;
   height: 100vh;
@@ -41,6 +30,9 @@
 .menu {
   width: 30px;
 }
+.nav-section > ul {
+  display: none;
+}
 .filters-section {
   grid-area: filters;
   background-color: #ececec;
@@ -50,6 +42,7 @@
 }
 .filters-section > span {
   padding-top: 10px;
+  justify-content: center;
 }
 .filters-section > select {
   width: 250px;
@@ -64,7 +57,14 @@
   flex-direction: column;
   align-items: center;
   padding: 15px;
-  gap: 10px;
+}
+.main-section > .cards-container {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px;
+  gap: 20px;
 }
 .main-section > .cards-container > .card {
   display: flex;
@@ -74,11 +74,12 @@
   width: 220px;
   height: fit-content;
   padding: 35px 0;
-  gap: 15px;
+  gap: 30px;
   border-radius: 3px;
 }
 .main-section > .cards-container > .card > img {
   width: 200px;
+  height: 150px;
 }
 .main-section > .cards-container > .card > button {
   width: 90px;
@@ -88,9 +89,20 @@
   border: none;
   border-radius: 5px;
 }
+.main-section > .navigation {
+  display: flex;
+}
+.main-section > .navigation > button {
+  width: 30px;
+  height: 30px;
+  background-color: #ececec;
+  color: blue;
+  border: none;
+}
+
 .foot-section {
   grid-area: footer;
-  background-color: blue;
+  background-color: darkblue;
   color: #ececec;
   display: flex;
   flex-direction: column;
@@ -103,4 +115,41 @@
 .foot-section > .foot > img {
   width: 25px;
   padding-top: 10px;
+}
+
+@media (min-width: 576px) {
+  .container {
+    grid-template-areas:
+      "nav filters"
+      "nav main"
+      "footer main";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 65px 1fr 65px;
+  }
+  .main-section > .cards-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .nav-section {
+    flex-direction: column;
+    justify-content: start;
+    gap: 35px;
+    padding: 5px;
+  }
+  .nav-section > ul {
+    list-style: none;
+    display: block;
+  }
+  .nav-section > .logo-container {
+    display: flex;
+  }
+  .nav-section > .logo-container > h1 {
+    text-align: center;
+  }
+  .nav-section > .menu {
+    display: none;
+  }
+  .filters-section > select {
+    width: 90%;
+  }
 }
