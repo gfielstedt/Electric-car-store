@@ -33,6 +33,13 @@
 .nav-section > ul {
   display: none;
 }
+.nav-section > ul li:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transform: scale(1.5);
+  transition: all 1s steps(300);
+}
 .filters-section {
   grid-area: filters;
   background-color: #ececec;
@@ -71,16 +78,30 @@
   flex-direction: column;
   align-items: center;
   background-color: #ececec;
-  width: 220px;
   height: fit-content;
   padding: 35px 0;
   gap: 30px;
   border-radius: 3px;
+  transition: all 10s step-start;
+}
+.main-section > .cards-container > .card :hover {
+  transform: scale(1.15);
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 10px;
 }
 .main-section > .cards-container > .card > img {
   width: 200px;
   height: 150px;
+  margin-bottom: 1px;
+  filter: grayscale(100%);
+  opacity: 0.3;
 }
+.main-section > .cards-container > .card > img:hover {
+  filter: grayscale(0);
+  opacity: 0.9;
+}
+
 .main-section > .cards-container > .card > button {
   width: 90px;
   height: 25px;
@@ -89,6 +110,12 @@
   border: none;
   border-radius: 5px;
 }
+.main-section > .cards-container > .card > button:hover {
+  background-color: black;
+  color: aqua;
+  cursor: pointer;
+}
+
 .main-section > .navigation {
   display: flex;
 }
@@ -98,6 +125,13 @@
   background-color: #ececec;
   color: blue;
   border: none;
+}
+.main-section > .navigation > button:hover {
+  background-color: black;
+  color: aqua;
+  border-radius: 30px;
+  cursor: pointer;
+  transform: scale(1.2);
 }
 
 .foot-section {
@@ -110,11 +144,12 @@
 }
 .foot-section > .foot {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
-.foot-section > .foot > img {
-  width: 25px;
-  padding-top: 10px;
+.foot-section > .foot > a {
+  text-decoration: none;
+  color: white;
 }
 
 @media (min-width: 576px) {
